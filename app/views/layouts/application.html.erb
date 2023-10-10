@@ -31,7 +31,7 @@
           <li class="nav-item active">
             <%= link_to "Movies", movies_path, class: "nav-link" %>
           </li>
-          
+
         </ul>
         <form class="form-inline d-flex mx-auto my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,13 +39,17 @@
         </form>
       </div>
     </nav>
-    <div style="color: green;">
+      <% if notice.present? %>
+      <div class="alert alert-success" role="alert">
       <%= notice %>
     </div>
+    <% end %>
 
-    <div style="color: red;">
+    <% if alert.present? %>
+    <div class="alert alert-danger" role="alert">
       <%= alert %>
     </div>
+    <% end %>
 
     <%= yield %>
 
